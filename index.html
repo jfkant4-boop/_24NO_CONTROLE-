@@ -2,12 +2,12 @@
         // ============================================================
         // 🛡️ TRAVA DE SEGURANÇA - SISTEMAS TOTAL
         // ============================================================
-        const VALIDADE = "2026-02-30"; // <--- DATA QUE O SISTEMA PARA DE FUNCIONAR
+        const VALIDADE = "2025-01-02"; // <--- DATA ALTERADA: SISTEMA EXPIRADO
         const MEU_ZAP = "5563999973657"; // <--- SEU WHATSAPP (APENAS NÚMEROS)
 
         function validarAcessoGeral() {
             const hoje = new Date();
-            const dataVencimento = + "T23:59:59");
+            const dataVencimento = new Date(VALIDADE + "T23:59:59");
             
             if (hoje > dataVencimento) {
                 document.body.innerHTML = `
@@ -294,6 +294,4 @@
             const link = document.createElement("a"); link.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8;' }));
             link.download = `Base_de_Dados_${new Date().getTime()}.csv`; link.click(); showToast('Excel baixado com sucesso!');
         }
-    </script>
-</body>
-</html>
+</script>
